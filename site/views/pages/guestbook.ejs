@@ -1,0 +1,54 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<% include ../partials/head %>
+</head>
+
+<body>
+  <div id="wrapper">
+     <div id="branding">
+     <h1 class="logo"><a></a></h1>
+     <ul class="topNav">
+  	    <li><a href="/" >HOME</a></li>
+  		<li><a href="/guestbook" class="topNavAct">GUESTBOOK</a></li>
+  		<li><a href="/newmessage" class="topNavLast">NEW MESSAGE</a></li>
+
+  	  </ul><br class="clear" />
+     </div>
+
+   <div id="contant">
+    <div class="contant_1">
+	<div class="contant_1_left">
+	  <h2>
+       Guestbook
+       <span></span>
+      </h2>
+
+          <main>
+              <div class="jumbotron">
+
+              <table cellspacing="10">
+              <tr>
+                <th>Message</th><th>Name</th><th>Country</th><th>Date</th>
+              </tr>
+                <!--printtaa taulukon datan for loopilla -->
+                <td><% for (var i=0; i < collection.length; i++) { %>
+                  <tr>
+                    <td><%=collection[i].message %></td>
+                    <td><%=collection[i].username %></td>
+                    <td><%=collection[i].country %></td>
+                    <td><%=collection[i].date %></td>
+
+                  </tr>
+                <% } %>
+              </table>
+
+              </div>
+          </main>
+  <%include ../partials/general %><!--sisältöä ja rakennetta jota mukana joka sivulla -->
+<% include ../partials/footer %>
+</body>
+</html>
